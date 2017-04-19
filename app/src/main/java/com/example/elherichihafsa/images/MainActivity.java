@@ -512,7 +512,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                     }
 
                     // Resize the image so that it fits the dimensions of the ImageView
-                    Bitmap putImage = Bitmap.createScaledBitmap(bmp, 512, 512, true);
+                    int newHeight = (int) (bmp.getHeight() * (512.0 / bmp.getWidth()));
+                    Bitmap putImage = Bitmap.createScaledBitmap(bmp, 512, newHeight, true);
 
                     // Saving the image in bmpSave to be able to reset the bitmap
                     bmpSave = putImage.copy(Bitmap.Config.ARGB_8888,true);
