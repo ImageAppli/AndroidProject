@@ -22,7 +22,8 @@ public class Effect {
      * @return Bitmap
      */
     public static Bitmap toGray(Bitmap bmp) {
-
+        long start = System.currentTimeMillis();
+        
         int h = bmp.getHeight();
         int w = bmp.getWidth();
 
@@ -45,6 +46,10 @@ public class Effect {
         }
 
         bmp.setPixels(pixels, 0, w, 0, 0, w, h);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+        
         return bmp;
     }
 
@@ -57,6 +62,7 @@ public class Effect {
      * @return Bitmap
      */
     public static Bitmap colorFilter(Bitmap bmp, double red, double green, double blue) {
+        long start = System.currentTimeMillis();
 
         // image size
         int width = bmp.getWidth();
@@ -80,6 +86,10 @@ public class Effect {
         }
 
         result.setPixels(pixels,0,width,0,0,width,height);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+            
         return result;
     }
 
@@ -91,6 +101,7 @@ public class Effect {
      *
      */
     public static Bitmap invert(Bitmap bmp) {
+        long start = System.currentTimeMillis();
 
         int w = bmp.getWidth();
         int h = bmp.getHeight();
@@ -107,6 +118,10 @@ public class Effect {
         }
 
         bmp.setPixels(pixels, 0, w, 0, 0, w, h);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+            
         return bmp;
     }
 
@@ -117,6 +132,7 @@ public class Effect {
      * @return Bitmap
      */
     public static Bitmap toColorize(Bitmap bmp) {
+        long start = System.currentTimeMillis();
 
         int width = bmp.getWidth();
         int height = bmp.getHeight();
@@ -147,6 +163,10 @@ public class Effect {
         }
 
         bmp.setPixels(pixels, 0, width, 0, 0, width, height);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+            
         return bmp;
     }
 
@@ -157,6 +177,7 @@ public class Effect {
      * @return
      */
     public static Bitmap saturation(Bitmap bmp, float s) {
+        long start = System.currentTimeMillis();
 
         int width = bmp.getWidth();
         int height = bmp.getHeight();
@@ -187,6 +208,10 @@ public class Effect {
         }
 
         bmp.setPixels(pixels, 0, width, 0, 0, width, height);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+        
         return bmp;
     }
 
@@ -197,6 +222,7 @@ public class Effect {
      * @return Bitmap
      */
     public static Bitmap brightness(Bitmap bmp, int value) {
+        long start = System.currentTimeMillis();
 
         // image size
         int width = bmp.getWidth();
@@ -247,6 +273,10 @@ public class Effect {
         }
 
         bmp.setPixels(pixels, 0, width, 0, 0, width, height);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+        
         return bmp;
 
     }
@@ -262,6 +292,7 @@ public class Effect {
      */
 
     public static Bitmap contrast(Bitmap bmp,double value){
+        long start = System.currentTimeMillis();
 
         int width = bmp.getWidth();
         int height = bmp.getHeight();
@@ -296,6 +327,10 @@ public class Effect {
         }
 
         bmp.setPixels(pixels,0,width,0,0,width,height);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+        
         return bmp;
     }
 
@@ -305,6 +340,7 @@ public class Effect {
      *
      */
     public static Bitmap sketch(Bitmap bmp) {
+        long start = System.currentTimeMillis();
 
         int type = 6;
         int threshold = 20;
@@ -356,6 +392,9 @@ public class Effect {
                 result.setPixel(x + 1, y + 1, Color.argb(A, R, G, B));
             }
         }
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
 
         return result;
     }
@@ -369,6 +408,7 @@ public class Effect {
      */
 
     public static Bitmap sepia(Bitmap bmp) {
+        long start = System.currentTimeMillis();
 
         int w = bmp.getWidth();
         int h = bmp.getHeight();
@@ -403,12 +443,16 @@ public class Effect {
         }
 
         bmp.setPixels(pixels, 0, w, 0, 0, w, h);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+        
         return bmp;
     }
 
 
     /**
-     * function decreasing the color depth of the image to give it a cartoon effect
+     * function decreasing the color depth of the image giving it a cartoon effect
      *
      * link :  https://xjaphx.wordpress.com/2011/06/21/image-processing-decreasing-color-depth/
      *
@@ -417,6 +461,7 @@ public class Effect {
      * @return Bitmap
      */
     public static Bitmap decreaseColorDepth(Bitmap bmp, int value) {
+        long start = System.currentTimeMillis();
 
         // get image size
         int width = bmp.getWidth();
@@ -446,6 +491,10 @@ public class Effect {
         }
 
         bmp.setPixels(pixels,0,width,0,0,width,height);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+        
         return bmp;
     }
 
