@@ -340,9 +340,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                         bmp = Convolution.Sharpen(bmp);
                         myImageView.setImageBitmap(bmp);
                         return true;
-
-                    case R.id.nav_test:
-                        return true;
                 }
                 return true;
 
