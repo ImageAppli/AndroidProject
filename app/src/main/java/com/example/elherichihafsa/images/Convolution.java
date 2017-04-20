@@ -21,6 +21,7 @@ public class Convolution {
      */
 
     public static Bitmap Moyenneur(Bitmap bmp) {
+        long start = System.currentTimeMillis();
 
         int SIZE = 3;
 
@@ -66,6 +67,10 @@ public class Convolution {
         }
 
         bmp.setPixels(pixels, 0, width, 0, 0, width, height);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+
         return bmp;
     }
 
@@ -81,6 +86,7 @@ public class Convolution {
      */
 
     public static Bitmap Moyenneur5x5(Bitmap bmp) {
+        long start = System.currentTimeMillis();
 
         int SIZE = 5;
 
@@ -126,6 +132,10 @@ public class Convolution {
         }
 
         bmp.setPixels(pixels, 0, width, 0, 0, width, height);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+
         return bmp;
     }
 
@@ -265,6 +275,7 @@ public class Convolution {
      * @return bmp
      */
     public static Bitmap Sharpen(Bitmap src) {
+        long start = System.currentTimeMillis();
 
         int width = src.getWidth();
         int height = src.getHeight();
@@ -324,6 +335,10 @@ public class Convolution {
                 result.setPixel(x + 1, y + 1, Color.argb(A, R, G, B));
             }
         }
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+
         return result;
     }
 
@@ -356,6 +371,8 @@ public class Convolution {
      *
      */
     public static Bitmap median(Bitmap bmp){
+        long start = System.currentTimeMillis();
+
         int w = bmp.getWidth();
         int h = bmp.getHeight();
 
@@ -383,6 +400,10 @@ public class Convolution {
             }
         }
         bmp.setPixels(pixels, 0, w, 0, 0, w, h);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+
         return bmp;
     }
 
