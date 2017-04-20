@@ -23,8 +23,6 @@ public class Effect {
         int h = bmp.getHeight();
         int w = bmp.getWidth();
 
-        Bitmap result = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
-
         int[] pixels = new int[h * w];
         bmp.getPixels(pixels, 0, w, 0, 0, w, h);
 
@@ -43,12 +41,12 @@ public class Effect {
             pixels[i] = Color.rgb(moy, moy, moy);
         }
 
-        result.setPixels(pixels, 0, w, 0, 0, w, h);
+        bmp.setPixels(pixels, 0, w, 0, 0, w, h);
         
         long end = System.currentTimeMillis();
         System.out.println(end - start);
         
-        return result;
+        return bmp;
     }
 
     /**
