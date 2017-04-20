@@ -165,7 +165,7 @@ public class HistogramEffect {
      * @return Bitmap
      *
      */
-    public static Bitmap equalHistogramBlackAndWhite(Bitmap bmp) 
+    public static Bitmap equalHistogramBlackAndWhite(Bitmap bmp) {
         long start = System.currentTimeMillis();
 
         Effect.toGray(bmp);
