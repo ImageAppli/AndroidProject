@@ -48,11 +48,11 @@
                 android:icon="@mipmap/ic_contrast"/>
                 <menu>
                     <item android:id="@+id/nav_contrast"
-                        android:title="Contrast"/>
+                        android:title="Extension of Dynamics"/>
                     <item android:id="@+id/nav_egalbw"
-                        android:title="Egalisation Black and White"/>
+                        android:title="Equalization Black and White"/>
                     <item android:id="@+id/nav_egalc"
-                        android:title="Egalisation Color"/>
+                        android:title="Equalization Color"/>
 
                     </menu>
             </group>
@@ -83,8 +83,6 @@
                 android:title="Flip"/>
             <item android:id="@+id/nav_rotate"
                 android:title="Rotate"/>
-            <item android:id="@+id/nav_test"
-                android:title="Test"/>
         </menu>
     </group>
     <group/>
