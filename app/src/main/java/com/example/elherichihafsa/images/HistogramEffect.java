@@ -81,6 +81,7 @@ public class HistogramEffect {
      */
 
     public static Bitmap contrast(Bitmap bmp) {
+        long start = System.currentTimeMillis();
 
         Effect.toGray(bmp);
         // Image size
@@ -91,6 +92,7 @@ public class HistogramEffect {
         int[] D = dynamic(bmp);
 
         bmp.getPixels(pixels, 0, w, 0, 0, w, h);
+        Bitmap result = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
 
         // Applies linear extension of dynamics to the bitmap
 
@@ -101,8 +103,12 @@ public class HistogramEffect {
             pixels[i] = Color.rgb(R, G, B);
         }
 
-        bmp.setPixels(pixels, 0, w, 0, 0, w, h);
-        return bmp;
+        result.setPixels(pixels, 0, w, 0, 0, w, h);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+        
+        return result;
     }
 
     /**
@@ -112,8 +118,9 @@ public class HistogramEffect {
      * @return Bitmap
      */
     public static Bitmap equalHistogram(Bitmap bmp) {
+        long start = System.currentTimeMillis();
 
-        Bitmap operation = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
+        Bitmap result = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
 
         int w = bmp.getWidth();
         int h = bmp.getHeight();
@@ -142,8 +149,12 @@ public class HistogramEffect {
             pixels[i] = Color.rgb(R, G, B);
         }
 
-        operation.setPixels(pixels, 0, w, 0, 0, w, h);
-       return operation;
+        result.setPixels(pixels, 0, w, 0, 0, w, h);
+        
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+        
+        return result;
     }
 
 
@@ -154,10 +165,14 @@ public class HistogramEffect {
      * @return Bitmap
      *
      */
-    public static Bitmap equalHistogramBlackAndWhite(Bitmap bmp) {
+    public static Bitmap equalHistogramBlackAndWhite(Bitmap bmp) 
+        long start = System.currentTimeMillis();
+
         Effect.toGray(bmp);
         int w = bmp.getWidth();
         int h = bmp.getHeight();
+    
+        Bitmap result = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
 
         int[] pixels = new int[h * w];
         int[] histo = histogram(bmp);
@@ -181,7 +196,11 @@ public class HistogramEffect {
             pixels[i] = Color.rgb(R, G, B);
         }
 
-        bmp.setPixels(pixels, 0, w, 0, 0, w, h);
-        return bmp;
+        result.setPixels(pixels, 0, w, 0, 0, w, h);
+    
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+    
+        return result;
     }
 }
