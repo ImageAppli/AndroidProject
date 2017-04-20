@@ -4,10 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import java.util.Random;
 
-/**
- * Created by mawdoudbacar on 12/04/2017.
- */
-
 
 /**
  * Class dedicated to bitmap effect
