@@ -34,6 +34,8 @@ public class Convolution {
 
         int width = bmp.getWidth();
         int height = bmp.getHeight();
+        
+        Bitmap result = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
 
         int sumR, sumG, sumB = 0;
         int[] pixels = new int [width*height];
@@ -66,12 +68,12 @@ public class Convolution {
             }
         }
 
-        bmp.setPixels(pixels, 0, width, 0, 0, width, height);
+        result.setPixels(pixels, 0, width, 0, 0, width, height);
         
         long end = System.currentTimeMillis();
         System.out.println(end - start);
 
-        return bmp;
+        return result;
     }
 
 
@@ -99,6 +101,9 @@ public class Convolution {
 
         int width = bmp.getWidth();
         int height = bmp.getHeight();
+        
+        Bitmap result = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
+
 
         int sumR, sumG, sumB = 0;
         int[] pixels = new int [width*height];
@@ -131,12 +136,12 @@ public class Convolution {
             }
         }
 
-        bmp.setPixels(pixels, 0, width, 0, 0, width, height);
+        result.setPixels(pixels, 0, width, 0, 0, width, height);
         
         long end = System.currentTimeMillis();
         System.out.println(end - start);
 
-        return bmp;
+        return result;
     }
 
     /**
@@ -158,6 +163,9 @@ public class Convolution {
 
         int width = bmp.getWidth();
         int height = bmp.getHeight();
+        
+        Bitmap result = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
+
 
         int sumR, sumG, sumB = 0;
 
@@ -194,12 +202,12 @@ public class Convolution {
             }
         }
 
-        bmp.setPixels(pixels, 0, width, 0, 0, width, height);
+        result.setPixels(pixels, 0, width, 0, 0, width, height);
 
         long end = System.currentTimeMillis();
         System.out.println(end - start);
 
-        return bmp;
+        return result;
 
     }
 
@@ -224,6 +232,9 @@ public class Convolution {
 
         int width = bmp.getWidth();
         int height = bmp.getHeight();
+        
+        Bitmap result = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
+
 
         int sumR, sumG, sumB = 0;
 
@@ -260,12 +271,12 @@ public class Convolution {
             }
         }
 
-        bmp.setPixels(pixels, 0, width, 0, 0, width, height);
+        result.setPixels(pixels, 0, width, 0, 0, width, height);
 
         long end = System.currentTimeMillis();
         System.out.println(end - start);
 
-        return bmp;
+        return result;
 
     }
 
@@ -279,6 +290,7 @@ public class Convolution {
 
         int width = src.getWidth();
         int height = src.getHeight();
+        
         Bitmap result = Bitmap.createBitmap(width, height, src.getConfig());
 
         int[][] Matrix = new int[][] {
@@ -375,6 +387,8 @@ public class Convolution {
 
         int w = bmp.getWidth();
         int h = bmp.getHeight();
+        
+        Bitmap result = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
 
         int[] tab = new int [9];
         int[] SortedTab ;
@@ -399,12 +413,12 @@ public class Convolution {
                 }
             }
         }
-        bmp.setPixels(pixels, 0, w, 0, 0, w, h);
+        result.setPixels(pixels, 0, w, 0, 0, w, h);
         
         long end = System.currentTimeMillis();
         System.out.println(end - start);
 
-        return bmp;
+        return result;
     }
 
 }
